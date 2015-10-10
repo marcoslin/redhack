@@ -19,7 +19,16 @@
 
 
     app.controller('HomeController', ['$scope', '$log', function ($scope, $log) {
-        $scope.message = 'hello';
+        $scope.today = function() {
+            $scope.dt = new Date();
+        };
+        $scope.open = function($event) {
+            $scope.status.opened = true;
+        };
+        $scope.status = {
+            opened: false
+        };
+        $scope.today();
     }]);
 
     app.controller('RouteController', ['$scope', '$state', '$log', function ($scope, $state, $log) {

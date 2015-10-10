@@ -27,6 +27,7 @@ h2.section-heading {
     background: url("/img/home2.jpg");
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #2D3A42;
     width: 100%;
     height: 100%;
 }
@@ -36,6 +37,10 @@ h2.section-heading {
     bottom: 50px;
     width: 100%;
     text-align: center;
+}
+
+.btn-square {
+    border-radius: 4px;
 }
 
 .well-sf {
