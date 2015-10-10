@@ -1,28 +1,41 @@
 <section class="bg-primary" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Detail</h2>
+            <div ng-class="fs.row_style" class="text-center">
+                <h2 class="section-heading">Confirm Your Trip</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div ng-class="fs.row_style">
                 <div class="well well-sf">
                     <table>
-                        <tr>
-                            <td>Roma</td>
-                            <td class="text-right">Venezia Mestre</td>
+                        <tr class="title-row">
+                            <td width="48%"><strong>Roma</strong></td>
+                            <td width="2%" rowspan="2">
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </td>
+                            <td width="48%" class="text-right"><strong>Venezia Mestre</strong></td>
                         </tr>
-                        <tr>
-                            <td>FA9440</td>
+                        <tr class="row-border-bottom">
+                            <td class="head-row">10:25</td>
+                            <td class="head-row text-right">13:55</td>
+                        </tr>
+                        <tr class="row-spacer">
+                            <td class="info-row">
+                                <span class="label label-default">FA9440</span>
+                            </td>
                             <td></td>
+                            <td class="info-row text-right">
+                                <i class="glyphicon glyphicon-time"></i>
+                                4h 20m
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div ng-class="fs.row_style">
                 <div class="well well-sf">
                     <table>
                         <tr>
@@ -37,9 +50,9 @@
                 </div>
             </div>
         </div>
-        <div class="row home-bottom">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <a ui-sref="main" class="btn btn-primary btn-xl page-scroll">Select</a>
+        <div class="row lower-center">
+            <div ng-class="fs.row_style">
+                <a ui-sref="main" class="btn btn-default btn-xl">Save</a>
             </div>
         </div>
     </div>

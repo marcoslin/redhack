@@ -1,28 +1,47 @@
 <section class="bg-primary" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Route</h2>
+            <div ng-class="fs.row_style" class="text-center">
+                <h2 class="section-heading">Select Itinerary</h2>
             </div>
         </div>
         <div class="row" ng-click="showDetail()">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div ng-class="fs.row_style">
+                <div class="option-number">
+                    <span class="badge badge-default">1</span>
+                </div>
+                
                 <div class="well well-sf">
                     <table>
-                        <tr>
-                            <td>Roma</td>
-                            <td class="text-right">Gaggio Porta Est</td>
+                        <tr class="title-row">
+                            <td width="48%"><strong>Roma</strong></td>
+                            <td width="2%" rowspan="2">
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </td>
+                            <td width="48%" class="text-right"><strong>Gaggio Porta Est</strong></td>
                         </tr>
-                        <tr>
-                            <td>FA9440-RE10061</td>
+                        <tr class="row-border-bottom">
+                            <td class="head-row">10:25</td>
+                            <td class="head-row text-right">14:25</td>
+                        </tr>
+                        <tr class="row-spacer">
+                            <td class="info-row">
+                                <span class="label label-default">FA9440</span>
+                                /
+                                <span class="label label-default">RE10061</span>
+                            </td>
                             <td></td>
+                            <td class="info-row text-right">
+                                <i class="glyphicon glyphicon-time"></i>
+                                3h 55m
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div ng-class="fs.row_style">
                 <div class="well well-sf">
                     <table>
                         <tr>

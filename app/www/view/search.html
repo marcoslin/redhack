@@ -1,12 +1,12 @@
-<section class="bg-primary" id="about">
+<section id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2 class="section-heading">Search your travel</h2>
+            <div ng-class="fs.row_style" class="text-center">
+                <h2 class="section-heading">Choose Your Trip</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div ng-class="fs.row_style">
                 <form>
                     <div class="form-group">
                         <label for="fromStation">From:</label>
@@ -17,9 +17,10 @@
                         <input type="text" class="form-control" id="toStation" placeholder="To:">
                     </div>
                 </form>
-
-                <a ui-sref="search-route" class="btn btn-default btn-xl">Go!</a>
             </div>
+        </div>
+        <div class="row lower-center">
+            <a ui-sref="search-route" class="btn btn-default btn-xl">Let's Go!</a>
         </div>
     </div>
 </section>

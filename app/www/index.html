@@ -37,7 +37,7 @@
 
 </head>
 
-<body id="page-top" ng-app="redhack">
+<body id="page-top" ng-app="redhack" ng-controller="CoreController">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -49,7 +49,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Sfreccia</a>
+                <!--
+                <div class="navbar-brand page-scroll">Sfreccia</div>
+                -->
+                <div class="navbar-brand page-scroll" ng-show="fs.show_logo">
+                    <a ui-sref="home">
+                        <img class="header-logo" src="img/logo.png">
+                    </a>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,7 +81,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-   <div ui-view></div>
+    <div ui-view class="bg-primary container-sf"></div>
     
 
     <!-- jQuery -->
