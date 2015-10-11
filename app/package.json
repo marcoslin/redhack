@@ -1,0 +1,19 @@
+{
+  "name": "RedHack",
+  "version": "1.0.0",
+  "description": "App for BigHack",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marcoslin/redhack.git"
+  },
+  "author": "Marcos Lin <marcos.lin@farport.co.uk> (https://plus.google.com/+MarcosLin)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoslin/redhack/issues"
+  },
+  "homepage": "https://github.com/marcoslin/redhack"
+}

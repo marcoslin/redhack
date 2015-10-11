@@ -1,0 +1,74 @@
+<section class="bg-primary" id="main">
+    <div class="container">
+        <!-- Current Trip Detail -->
+        <div class="row">
+            <div ng-class="fs.row_style">
+                <div class="well well-small-sf" ui-sref="main-route">
+                    <table>
+                        <tr class="title-row">
+                            <td width="18%"><span class="label label-default">FA9440</span></td>
+                            <td width="38%"><strong>Roma</strong></td>
+                            <td width="6%"><i class="glyphicon glyphicon-chevron-right"></i></td>
+                            <td width="38%" class="text-right"><strong>Venezia Mestre</strong></td>
+                        </tr>
+                    </table>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            Remaining: 50m
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Action Cards -->
+        <div class="row row-sf">
+            <div ng-class="fs.row_style">
+            <div class="well well-pic-sf">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Game
+                            </div>
+                            <div class="project-name">
+                                Win a Coffee
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <div class="row row-sf">
+            <div ng-class="fs.row_style">
+            <div class="well well-pic-sf">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Service
+                            </div>
+                            <div class="project-name">
+                                Change Ticket
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Feedback -->
+        <div class="row">
+            <div ng-class="fs.row_style"><div class="well well-sf">
+                <div class="title-row"><strong>How was your Trip?</strong></div>
+                <div class="row-spacer action-feedback">
+                    <uib-rating ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+                </div>
+            </div></div>
+        </div>
+    </div>
+</section>
