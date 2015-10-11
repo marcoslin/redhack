@@ -61,7 +61,6 @@ def setarrivostazione():
         for property in prop["elements"]:
             c = 2
             break
-    return True
     return ""
 
 def controllopartenza(orig,dest,time):
@@ -103,7 +102,7 @@ def ritornaitinerario():
     time = request.args.get("orario")
     bool = controllopartenza(orig,dest,time)
     if bool:
-        return "ok"
+        return jsonify({"status":"ok"})
     #cerco alternativa
     try:
         uerrelle = "http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/soluzioniViaggioNew/"+orig[2:]+"/"+dest[2:]+"/"+time
@@ -113,7 +112,7 @@ def ritornaitinerario():
 
     data = json.loads(response)
     proposta = data["soluzioni"][0]
-    return jsonify({"soluzione_alternativa_viaggio":proposta})
+    return jsonify({"status":"not ok"},{"soluzione_alternativa_viaggio":proposta})
 
 
 @app.route("/controlloitinerario")              #controllo sullo scambio
