@@ -24,8 +24,8 @@ h2.section-heading {
 }
 
 .home-sf {
-    background: url("/img/home2.jpg");
-    background-size: contain;
+    background: url("/img/home.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: #2D3A42;
     width: 100%;
