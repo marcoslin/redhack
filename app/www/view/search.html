@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row">
-            <form>
+            <form autocomplete="off">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-6 col-xs-offset-1">
@@ -30,12 +30,12 @@
                 </div>
                 <div class="row">
                     <div ng-class="fs.row_style" class="form-group typeahead-demo">
-                        <label for="fromStation">From:</label>
+                        <label for="fromStation">From: {{fromStation}}</label>
                         <input type="text"
                                 ng-model="fromStation"
                                 placeholder="Locations loaded via $http"
                                 typeahead-wait-ms="300"
-                                typeahead="station.name for station in trovastazione($viewValue) | filter:{name:$viewValue}"
+                                typeahead="station.name for station in trovastazione($viewValue)"
                                 typeahead-loading="loadingLocations"
                                 typeahead-no-results="noResults" class="form-control" id="fromStation">
                     </div>
@@ -43,7 +43,13 @@
                 <div class="row">
                     <div ng-class="fs.row_style" class="form-group">
                         <label for="toStation">To:</label>
-                        <input type="text" ng-model="toStation" class="form-control" id="toStation" placeholder="To:">
+                        <input type="text"
+                                ng-model="toStation"
+                                placeholder="Locations loaded via $http"
+                                typeahead-wait-ms="300"
+                                typeahead="station.name for station in trovastazione($viewValue)"
+                                typeahead-loading="loadingLocations"
+                                typeahead-no-results="noResults" class="form-control" id="toStation">
                     </div>
                 </div>
             </form>
