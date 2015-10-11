@@ -3,11 +3,12 @@ import xml.etree.ElementTree  as ET
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask import send_from_directory
 import urllib2 as url
 import json
 import time
 import datetime
-tree = ET.parse('/Users/mel/Desktop/Kismet-20151010-15-04-59-1.xml')
+tree = ET.parse('Kismet-20151010-15-04-59-1.xml')
 e =  tree.getroot()
 set = set()
 for atype in e.iter('client-mac'):
@@ -111,6 +112,14 @@ def controlloitinerario():
 
     return True
 
+@app.route('/app/<path:path>')
+def send_app(path):
+    return send_from_directory('../app/www/', path)
+
+@app.route('/app/')
+def send_app_index():
+    return send_from_directory('../app/www/', 'index.html')
+
 def getT1(stationId, trainId):
     try:
         response = url.urlopen("http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/"+stationId+"/"+trainId)
@@ -130,4 +139,4 @@ def getT1(stationId, trainId):
 
 
 if __name__ == "__main__":
-    app.run(host='10.10.1.40') #host='10.10.1.40'
+    app.run(debug=True) #host='10.10.1.40'
