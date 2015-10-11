@@ -56,12 +56,12 @@ def setarrivostazione():
     except Exception, ex:
         print(ex)
     data = json.loads(response)
+    c=""
     for prop in data["rows"]:
-        for property in prop["rows"]:
-            if property["orarioPartenza"]==time:
-                idTreno=property["numeroTreno"]
-                break
-    return True
+        for property in prop["elements"]:
+            c = property["duration"]["value"]
+            break
+    return c
 
 def controllopartenza(orig,dest,time):
     #ottengo id del treno in partenza
