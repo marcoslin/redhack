@@ -13,27 +13,26 @@
                         </tr>
                     </table>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            Remaining: 50m
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            Delay: 1h 10m
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Action Cards -->
         <div class="row row-sf">
             <div ng-class="fs.row_style">
-            <div class="well well-pic-sf" ui-sref="game">
+            <div class="well well-pic-sf">
                 <a href="#" class="portfolio-box">
-                    <img src="img/coffee.png" class="img-responsive" alt="">
+                    <img src="img/refund.png" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
-                                Game
+                                Our Applogies...
                             </div>
                             <div class="project-name">
-                                Win a Coffee from Our Sponsor
+                                Get your 50% refund now!
                             </div>
                         </div>
                     </div>
@@ -46,14 +45,14 @@
             <div ng-class="fs.row_style">
             <div class="well well-pic-sf">
                 <a href="#" class="portfolio-box">
-                    <img src="img/wait.png" class="img-responsive" alt="">
+                    <img src="img/enjoy.png" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
-                                Rebook Connecting Train
+                                There is a Enjoy near Venezia Mestre
                             </div>
                             <div class="project-name">
-                                Change Ticket
+                                Book Now!
                             </div>
                         </div>
                     </div>
@@ -62,5 +61,14 @@
             </div>
         </div>
 
+        <!-- Feedback -->
+        <div class="row">
+            <div ng-class="fs.row_style"><div class="well well-sf">
+                <div class="title-row"><strong>How was your Trip?</strong></div>
+                <div class="row-spacer action-feedback">
+                    <uib-rating ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+                </div>
+            </div></div>
+        </div>
     </div>
 </section>

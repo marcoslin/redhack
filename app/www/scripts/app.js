@@ -38,6 +38,18 @@
                 templateUrl: 'view/main.html',
                 controller: 'MainController'
             })
+            .state('main-pre', {
+                url: '/main-pre',
+                templateUrl: 'view/main-pre.html',
+                controller: 'MainController'
+            })
+            .state('main-post', {
+                url: '/main-post',
+                templateUrl: 'view/main-post.html',
+                controller: 'MainController'
+            })
+
+
             .state('main-route', {
                 url: '/main-route',
                 templateUrl: 'view/main-route.html',

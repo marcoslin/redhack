@@ -96,6 +96,14 @@ tr.row-spacer > td {
     padding-top: 4px;
 }
 
+.status-label {
+    padding-top: 6px;
+    text-align: center;
+    color: green;
+    font-weight: 700;
+    font-size: 18 !important;
+
+}
 .option-number {
     float: left;
     padding-left: 3px;
