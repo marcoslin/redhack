@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route("/numeropersone")
 def trovapersone():
-    return str(len(set))
+    return jsonify({"totale_persone":str(len(set))})
 
 @app.route("/trovastazione")
 def trovaStazione():
@@ -59,9 +59,10 @@ def setarrivostazione():
     c=""
     for prop in data["rows"]:
         for property in prop["elements"]:
-            c = property["duration"]["value"]
-            break
-    return c
+            c = 2
+            #break
+    return True
+    return ""
 
 def controllopartenza(orig,dest,time):
     #ottengo id del treno in partenza
