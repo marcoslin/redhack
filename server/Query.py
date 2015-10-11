@@ -48,6 +48,19 @@ def setdelay():
 def setarrivostazione():
     global orarioArrivoInStazione
     orarioArrivoInStazione = 1444648800     #11:20 di domenica 12 ottobre 2015 in timestamp
+
+    #ottengo tempo da google maps
+    try:
+        uerrelle = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Rome+viale+jonio&destinations=rome+piazza+dei+cinquecento&mode=transit&transit_mode=bus&transit_routing_preference=less_walking&language=it-IT&key=AIzaSyBgmEtm167aJn5Gz4RM8dCpPX73ysVNUmk"
+        response = url.urlopen(uerrelle).read()
+    except Exception, ex:
+        print(ex)
+    data = json.loads(response)
+    for prop in data["rows"]:
+        for property in prop["rows"]:
+            if property["orarioPartenza"]==time:
+                idTreno=property["numeroTreno"]
+                break
     return True
 
 def controllopartenza(orig,dest,time):
@@ -75,7 +88,7 @@ def controllopartenza(orig,dest,time):
     property = data["fermate"][0]
     orarioPartenza = property["partenza_teorica"]
     orarioPartenza+=delay                     #hardcode sul tempo di partenza
-    orarioPartenzaDatetime = datetime.datetime.fromtimestamp(orarioPartenza)
+    #orarioPartenzaDatetime = datetime.datetime.fromtimestamp(orarioPartenza)
 
     if orarioPartenza<(orarioArrivoInStazione+600):     #10 minuti di tempo per arrivare al binario, quindi 11:30 di domenica 12 ottobre 2015
         return False
