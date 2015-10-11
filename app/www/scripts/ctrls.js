@@ -49,13 +49,13 @@
         
     }]);
 
-    app.controller('RouteController', ['$scope', '$state', '$log', function ($scope, $state, $log) {
+    app.controller('RouteController', ['$scope', '$state', 'dataService', '$log', function ($scope, $state, dataService, $log) {
         $scope.showDetail = function () {
             $state.go('search-save');
         };
     }]);
 
-    app.controller('MainController', ['$scope', '$state', '$log', function ($scope, $state, $log) {
+    app.controller('MainController', ['$scope', '$state', 'dataService', '$log', function ($scope, $state, dataService, $log) {
         $scope.rate = 0;
         $scope.max = 5;
 
@@ -71,6 +71,14 @@
             {stateOn: 'glyphicon-heart'},
             {stateOff: 'glyphicon-off'}
         ];
+
+        dataService.numeropersone().then(function (data) {
+            $log.info('numeropersone: ', data);
+            $scope.numeropersone = data.totale_persone;
+
+        });
+
+
     }]);
 
 
