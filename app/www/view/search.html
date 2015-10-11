@@ -20,24 +20,30 @@
                         </div>
                         <div class="col-xs-2">
                             <label for="fromHour">Hour:</label>
-                            <input id="fromHour" type="number" class="form-control" placeholder="Hour">
+                            <input id="fromHour" ng-model="dt_hour" type="number" class="form-control" placeholder="Hour">
                         </div>
                         <div class="col-xs-2">
                             <label for="fromMin">Min:</label>
-                            <input id="fromMin" type="number" class="form-control" placeholder="Min">
+                            <input id="fromMin" ng-model="dt_min" type="number" class="form-control" placeholder="Min">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div ng-class="fs.row_style" class="form-group">
+                    <div ng-class="fs.row_style" class="form-group typeahead-demo">
                         <label for="fromStation">From:</label>
-                        <input type="text" class="form-control" id="fromStation" placeholder="From:">
+                        <input type="text"
+                                ng-model="fromStation"
+                                placeholder="Locations loaded via $http"
+                                typeahead-wait-ms="300"
+                                typeahead="station.name for station in trovastazione($viewValue) | filter:{name:$viewValue}"
+                                typeahead-loading="loadingLocations"
+                                typeahead-no-results="noResults" class="form-control" id="fromStation">
                     </div>
                 </div>
                 <div class="row">
                     <div ng-class="fs.row_style" class="form-group">
                         <label for="toStation">To:</label>
-                        <input type="text" class="form-control" id="toStation" placeholder="To:">
+                        <input type="text" ng-model="toStation" class="form-control" id="toStation" placeholder="To:">
                     </div>
                 </div>
             </form>

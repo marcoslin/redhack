@@ -18,7 +18,7 @@
     }]);
 
 
-    app.controller('HomeController', ['$scope', '$log', function ($scope, $log) {
+    app.controller('HomeController', ['$scope', 'dataService', '$q', '$log', function ($scope, dataService, $q, $log) {
         $scope.today = function() {
             $scope.dt = new Date();
         };
@@ -28,7 +28,25 @@
         $scope.status = {
             opened: false
         };
-        $scope.today();
+
+
+        $scope.dt = new Date("2015-10-12");
+        $scope.dt_hour = 14;
+        $scope.dt_min = 50;
+        $scope.fromStation = "Roma Termini";
+        $scope.toStation = "Gaggio Porta Est";
+
+
+        $scope.trovastazione = function (station) {
+            $log.info('Search trovastazione:', station);
+            // var defer = $q.defer();
+            return dataService.trovastazione(station).then(function (data) {
+                $log.info('trovastazione:', data.results);
+                return data.results;
+            });
+            // return defer.promise;
+        };
+        
     }]);
 
     app.controller('RouteController', ['$scope', '$state', '$log', function ($scope, $state, $log) {

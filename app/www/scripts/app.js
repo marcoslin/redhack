@@ -1,6 +1,6 @@
 (function () {
 
-    var app = angular.module('redhack', ['ui.router','ui.bootstrap']);
+    var app = angular.module('redhack', ['ui.router','ui.bootstrap', 'ngResource']);
 
     // Define application route
 
