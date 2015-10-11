@@ -60,7 +60,7 @@ def setarrivostazione():
     for prop in data["rows"]:
         for property in prop["elements"]:
             c = 2
-            #break
+            break
     return True
     return ""
 
