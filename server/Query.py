@@ -35,15 +35,20 @@ def trovaStazione():
         results.append({"name":str(arr[0]),"id":str(arr[1])})
     return jsonify({"results":results})
 
-tempoModificato=12
+delay=0
 orarioArrivoInStazione=0
 
 @app.route("/setdelay")
 def setdelay():
-    global tempoModificato
-    tempoModificato = 900
+    global delay
+    delay = 900
     return True
 
+@app.route("/setarrivostazione")
+def setarrivostazione():
+    global orarioArrivoInStazione
+    orarioArrivoInStazione = 1444648800     #11:20 di domenica 12 ottobre 2015 in timestamp
+    return True
 
 def controllopartenza(orig,dest,time):
     #ottengo id del treno in partenza
@@ -69,10 +74,10 @@ def controllopartenza(orig,dest,time):
     orarioPartenza=0
     property = data["fermate"][0]
     orarioPartenza = property["partenza_teorica"]
-    orarioPartenza+=tempoModificato                     #hardcode sul tempo di partenza
+    orarioPartenza+=delay                     #hardcode sul tempo di partenza
     orarioPartenzaDatetime = datetime.datetime.fromtimestamp(orarioPartenza)
 
-    if orarioPartenza>orarioArrivoInStazione:
+    if orarioPartenza<(orarioArrivoInStazione+600):     #10 minuti di tempo per arrivare al binario, quindi 11:30 di domenica 12 ottobre 2015
         return False
     return True
 
