@@ -41,13 +41,13 @@ orarioArrivoInStazione=0
 @app.route("/setdelay")
 def setdelay():
     global delay
-    delay = 900
-    return True
+    delay = 18000000
+    return ""
 
 @app.route("/setarrivostazione")
 def setarrivostazione():
     global orarioArrivoInStazione
-    orarioArrivoInStazione = 1444648800     #11:20 di domenica 12 ottobre 2015 in timestamp
+    orarioArrivoInStazione = 1444639200     #18:50 di oggi 11 ottobre 2015 in timestamp
 
     #ottengo tempo da google maps
     try:
@@ -56,15 +56,17 @@ def setarrivostazione():
     except Exception, ex:
         print(ex)
     data = json.loads(response)
-    c=""
     for prop in data["rows"]:
         for property in prop["elements"]:
-            c = 2
+            orarioArrivoInStazione = property["duration"]["value"]
             break
+
+    orarioArrivoInStazione = 1444639200000  #hardcode 18:50:00
     return ""
 
 def controllopartenza(orig,dest,time):
     #ottengo id del treno in partenza
+    global delay
     try:
         uerrelle = "http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/soluzioniViaggioNew/"+orig[2:]+"/"+dest[2:]+"/"+time
         response = url.urlopen(uerrelle).read()
@@ -77,7 +79,8 @@ def controllopartenza(orig,dest,time):
         for property in prop["vehicles"]:
             if property["orarioPartenza"]==time:
                 idTreno=property["numeroTreno"]
-                break
+            break
+        break
     try:
         uerrelle = "http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/"+orig+"/"+idTreno
         response = url.urlopen(uerrelle).read()
@@ -112,7 +115,7 @@ def ritornaitinerario():
 
     data = json.loads(response)
     proposta = data["soluzioni"][0]
-    return jsonify({"status":"not ok"},{"soluzione_alternativa_viaggio":proposta})
+    return jsonify({"soluzione_alternativa_viaggio":proposta})
 
 
 @app.route("/controlloitinerario")              #controllo sullo scambio
