@@ -43,6 +43,12 @@
                 templateUrl: 'view/main-route.html',
                 controller: 'MainController'
             })
+
+            // Game
+            .state('game', {
+                url: '/game',
+                templateUrl: 'view/game.html'
+            })
         ;
 
     }]);
