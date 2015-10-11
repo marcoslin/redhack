@@ -38,6 +38,11 @@
                 templateUrl: 'view/main.html',
                 controller: 'MainController'
             })
+            .state('main-route', {
+                url: '/main-route',
+                templateUrl: 'view/main-route.html',
+                controller: 'MainController'
+            })
         ;
 
     }]);

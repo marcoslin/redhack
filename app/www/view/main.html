@@ -1,8 +1,9 @@
 <section class="bg-primary" id="main">
     <div class="container">
+        <!-- Current Trip Detail -->
         <div class="row">
             <div ng-class="fs.row_style">
-                <div class="well well-small-sf">
+                <div class="well well-small-sf" ui-sref="main-route">
                     <table>
                         <tr class="title-row">
                             <td width="18%"><span class="label label-default">FA9440</span></td>
@@ -19,6 +20,7 @@
                 </div>
             </div>
         </div>
+        <!-- Action Cards -->
         <div class="row row-sf">
             <div ng-class="fs.row_style">
             <div class="well well-pic-sf">
@@ -57,6 +59,16 @@
                 </a>
             </div>
             </div>
+        </div>
+
+        <!-- Feedback -->
+        <div class="row">
+            <div ng-class="fs.row_style"><div class="well well-sf">
+                <div class="title-row"><strong>How was your Trip?</strong></div>
+                <div class="row-spacer action-feedback">
+                    <uib-rating ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+                </div>
+            </div></div>
         </div>
     </div>
 </section>

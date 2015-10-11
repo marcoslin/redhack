@@ -91,6 +91,7 @@ h2.section-heading {
     border-bottom:1pt solid gray;
 }
 
+.row-spacer,
 tr.row-spacer > td {
     padding-top: 4px;
 }
@@ -105,5 +106,25 @@ tr.row-spacer > td {
     background-color: #f05f40;
 }
 
+.main-route {
+    font-weight: 700;
+}
 
+table.main-route tr th {
+    color: black;
+    border-bottom:1pt solid gray;
+    text-align: left;
+}
+
+.to-gray {
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+}
+
+.action-feedback {
+    padding-top: 10px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    text-align: center;
+}
 
