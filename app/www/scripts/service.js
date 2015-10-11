@@ -13,6 +13,13 @@
             return srv.get().$promise;
         };
 
+        this.numeropersone = function () {
+            var url = server + 'numeropersone',
+                srv = $resource(url)
+            ;
+            return srv.get().$promise;
+        };
+
     }]);
 })();
 
