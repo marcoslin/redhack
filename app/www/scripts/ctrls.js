@@ -32,6 +32,8 @@
         $scope.dt = new Date("2015-10-12");
         $scope.dt_hour = 14;
         $scope.dt_min = 50;
+        $scope.fromStation = "Roma Termini";
+        $scope.toStation = "Gaggio Porta Est";
 
         $scope.trovastazione = function (station) {
             $log.info('Search trovastazione:', station);
